@@ -253,6 +253,7 @@ fuel_type.clear()
 # SETS
 ###########
 
+# We will learn to create and modify sets 
 
 
 
