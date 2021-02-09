@@ -1,2 +1,2 @@
 # Python
-Includes scripts for practicing python
+Includes scripts to learn Python
