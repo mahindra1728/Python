@@ -10,6 +10,11 @@ Created on Wed Feb 10 11:16:05 2021
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Logistic_Regression
+from sklearn.metrics import accuracy_score,confusion_matrix
+
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 
@@ -92,22 +97,46 @@ np.linalg.matrix_rank(num_data) # Check ranl of a matrix
 num_data.corr() # Correlation matrix
 
 
+#################################################
+# Cross tables and Data Visualisation 
+#################################################
+
+data2.columns
+
+# Gender proportion table
+gender  = pd.crosstab( data2['Gender'], columns = 'count', normalize = True)
+
+# Gender v/s Salary status 
+gender_salarystat = pd.crosstab(data2['Gender'], [data2['Salary stat'],data2['Race']])
 
 
+####################################
+# Frequency Distribution of a column
+####################################
+
+sns.countplot(data2['Salary stat'])
+
+####################################
+# Histogram Plot 
+####################################
+
+sns.distplot(data2['Age'],bins = 100, kde =False)
 
 
+###############################
+# Box plot of Age v/s Salary 
+###############################
 
+sns.boxplot('Salary stat','Age', data = data2)
+data2.groupby('Salary stat')['Age'].median()
 
+####################### 
+# Bar Plot 
+######################
 
+sns.countplot(y = 'Ed type', data  = data2,hue = 'Salary stat')
 
-
-
-
-
-
-
-
-
+sns.countplot(y = 'Occupation', data  = data2,hue = 'Salary stat')
 
 
 
