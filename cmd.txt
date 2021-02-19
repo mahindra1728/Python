@@ -1,1 +1,2 @@
 wmic memphysical get maxcapacity : To check maximum ram capacity of your laptop
+https://forums.fast.ai/t/recommended-python-learning-resources/26888 : Recommedned python learning source from FAST AI team.
